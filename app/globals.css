@@ -1,0 +1,207 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-sidebar-background: var(--sidebar-background);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Custom Vardha colors */
+  --color-warm-sand: var(--warm-sand);
+  --color-charcoal: var(--charcoal);
+  --color-soft-cream: var(--soft-cream);
+  --color-terracotta: var(--terracotta);
+  --color-olive: var(--olive);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* LIGHT THEME — HSL → OKLCH */
+  --background: oklch(0.98 0.005 95);
+  --foreground: oklch(0.33 0.03 50);
+  --card: oklch(0.96 0.004 95);
+  --card-foreground: oklch(0.33 0.03 50);
+  --popover: oklch(0.98 0.005 95);
+  --popover-foreground: oklch(0.33 0.03 50);
+  --primary: oklch(0.45 0.07 60);
+  --primary-foreground: oklch(0.98 0.005 95);
+  --secondary: oklch(0.92 0.01 80);
+  --secondary-foreground: oklch(0.33 0.03 50);
+  --muted: oklch(0.94 0.008 80);
+  --muted-foreground: oklch(0.55 0.04 55);
+  --accent: oklch(0.9 0.015 70);
+  --accent-foreground: oklch(0.33 0.03 50);
+  --destructive: oklch(0.7 0.24 28);
+  --destructive-foreground: oklch(0.98 0.005 95);
+  --border: oklch(0.88 0.006 70);
+  --input: oklch(0.88 0.006 70);
+  --ring: oklch(0.45 0.07 60);
+
+  /* Sidebar */
+  --sidebar-background: oklch(0.98 0.005 95);
+  --sidebar-foreground: oklch(0.33 0.03 50);
+  --sidebar-primary: oklch(0.45 0.07 60);
+  --sidebar-primary-foreground: oklch(0.98 0.005 95);
+  --sidebar-accent: oklch(0.92 0.01 80);
+  --sidebar-accent-foreground: oklch(0.33 0.03 50);
+  --sidebar-border: oklch(0.88 0.006 70);
+  --sidebar-ring: oklch(0.45 0.07 60);
+
+  /* Custom Vardha Colors — Converted */
+  --warm-sand: oklch(0.93 0.015 75);
+  --charcoal: oklch(0.28 0.04 40);
+  --soft-cream: oklch(0.97 0.01 100);
+  --terracotta: oklch(0.63 0.12 40);
+  --olive: oklch(0.6 0.07 120);
+}
+
+.dark {
+  /* DARK THEME — HSL → OKLCH */
+  --background: oklch(0.18 0.02 50);
+  --foreground: oklch(0.95 0.005 95);
+  --card: oklch(0.22 0.02 50);
+  --card-foreground: oklch(0.95 0.005 95);
+  --popover: oklch(0.18 0.02 50);
+  --popover-foreground: oklch(0.95 0.005 95);
+  --primary: oklch(0.78 0.06 70);
+  --primary-foreground: oklch(0.18 0.02 50);
+  --secondary: oklch(0.32 0.02 55);
+  --secondary-foreground: oklch(0.95 0.005 95);
+  --muted: oklch(0.32 0.02 55);
+  --muted-foreground: oklch(0.6 0.03 70);
+  --accent: oklch(0.36 0.02 60);
+  --accent-foreground: oklch(0.95 0.005 95);
+  --destructive: oklch(0.55 0.18 30);
+  --destructive-foreground: oklch(0.95 0.005 95);
+  --border: oklch(0.28 0.01 55);
+  --input: oklch(0.28 0.01 55);
+  --ring: oklch(0.78 0.06 70);
+
+  /* Sidebar */
+  --sidebar-background: oklch(0.18 0.02 50);
+  --sidebar-foreground: oklch(0.95 0.005 95);
+  --sidebar-primary: oklch(0.78 0.06 70);
+  --sidebar-primary-foreground: oklch(0.18 0.02 50);
+  --sidebar-accent: oklch(0.32 0.02 55);
+  --sidebar-accent-foreground: oklch(0.95 0.005 95);
+  --sidebar-border: oklch(0.28 0.01 55);
+  --sidebar-ring: oklch(0.78 0.06 70);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer components {
+  .nav-bg {
+    @apply bg-background/95 backdrop-blur-md;
+  }
+
+  .minimal-card {
+    @apply bg-card border border-border/50 transition-all duration-300 hover:shadow-lg hover:border-border;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.4s ease-out forwards;
+  }
+
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+  .stagger-2 {
+    animation-delay: 0.2s;
+  }
+  .stagger-3 {
+    animation-delay: 0.3s;
+  }
+  .stagger-4 {
+    animation-delay: 0.4s;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
