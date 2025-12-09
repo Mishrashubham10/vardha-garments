@@ -60,18 +60,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Categories */}
-      <section className="section-padding">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-playfair font-medium text-foreground mb-3">
-              Shop by Category
-            </h2>
-            <p className="text-muted-foreground">Find your perfect style</p>
-          </div>
-        </div>
-      </section>
-
       {/* Featured Products */}
       <section className="section-padding bg-card">
         <div className="container mx-auto px-4">
@@ -92,7 +80,9 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <Link href={`/products/${product.id}`} key={product.id}>
+                <ProductCard key={product.id} product={product} />
+              </Link>
             ))}
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { ProductCard } from '@/components/ProductCard';
 import { products } from '@/data/products';
+import Link from 'next/link';
 
 export default function NewArrivalsPage() {
   const newArrivals = products.filter((p) => p.isNew);
@@ -18,7 +19,9 @@ export default function NewArrivalsPage() {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {newArrivals.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <Link key={product.id} href={`/products/${product.id}`}>
+              <ProductCard product={product} />
+            </Link>
           ))}
         </div>
       </main>
