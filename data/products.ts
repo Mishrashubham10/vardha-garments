@@ -24,7 +24,7 @@ export const products: Product[] = [
     inStock: true,
     rating: 4.4,
     size: ['28', '30', '32', '34', '36', '38', '40', '42'],
-    isNew: true,
+    isNew: false,
   },
   {
     id: '2',
@@ -48,7 +48,7 @@ export const products: Product[] = [
     inStock: true,
     rating: 4.5,
     size: ['S', 'M', 'L', 'XL', 'XXL'],
-    isNew: true,
+    isNew: false,
   },
   {
     id: '3',
@@ -73,7 +73,7 @@ export const products: Product[] = [
     inStock: true,
     rating: 4.4,
     size: ['28', '30', '32', '34', '36', '38', '40', '42'],
-    isNew: true,
+    isNew: false,
   },
   {
     id: '4',
@@ -128,7 +128,7 @@ export const products: Product[] = [
     inStock: true,
     rating: 4.3,
     size: ['S', 'M', 'L', 'XL'],
-    isNew: false,
+    isNew: true,
   },
   {
     id: '7',
@@ -184,7 +184,7 @@ export const products: Product[] = [
     inStock: true,
     rating: 4.4,
     size: ['S', 'M', 'L', 'XL'],
-    isNew: false,
+    isNew: true,
   },
   {
     id: '10',
@@ -238,7 +238,7 @@ export const products: Product[] = [
     inStock: true,
     rating: 4.2,
     size: ['S', 'M', 'L', 'XL'],
-    isNew: false,
+    isNew: true,
   },
   {
     id: '13',
@@ -293,7 +293,7 @@ export const products: Product[] = [
     inStock: true,
     rating: 4.4,
     size: ['S', 'M', 'L', 'XL'],
-    isNew: false,
+    isNew: true,
   },
   {
     id: '16',

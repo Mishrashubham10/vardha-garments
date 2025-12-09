@@ -1,12 +1,17 @@
+'use client';
+
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ProductCard } from '@/components/ProductCard';
-import { products } from '@/data/products';
+import { useVardha } from '@/context/VardhaContext';
 
 export default function HomePage() {
+  const { products } = useVardha();
+
   const featuredProducts = products.slice(0, 6);
+  const newArrivals = products.filter((p) => p.isNew);
 
   return (
     <div className="min-h-screen bg-background">
@@ -56,6 +61,34 @@ export default function HomePage() {
                 </Button>
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== NEW ARRIVALS ========= */}
+      <section className="section-padding bg-card">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between mb-12">
+            <div>
+              <h2 className="text-3xl font-playfair font-medium text-foreground mb-2">
+                New Arrivals
+              </h2>
+              <p className="text-muted-foreground">Handpicked for you</p>
+            </div>
+            <Link href="/new-arrivals">
+              <Button variant="outline">
+                View All
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {newArrivals.map((product) => (
+              <Link href={`/products/${product.id}`} key={product.id}>
+                <ProductCard key={product.id} product={product} />
+              </Link>
+            ))}
           </div>
         </div>
       </section>
