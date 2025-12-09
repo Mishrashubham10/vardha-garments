@@ -117,7 +117,7 @@ export default function ContactPage() {
                         Call Us
                       </h3>
                       <p className="text-muted-foreground">
-                        +91 9975161448
+                        +91 7774870081
                         <br />
                         Monday - Friday: 9am - 6pm PST
                       </p>
@@ -137,7 +137,7 @@ export default function ContactPage() {
                         Email Us
                       </h3>
                       <p className="text-muted-foreground">
-                        arments66@gmail.com
+                        vardhaecommercegaarments66@gmail.com
                       </p>
                     </div>
                   </div>
